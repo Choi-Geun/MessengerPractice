@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MessengerPractice</string>
+
+    <!-- 친구 리스트 메뉴 string -->
+    <string name="friends_list_menu_edit_friends">친구 편집</string>
+    <string name="friends_list_menu_setting">설정</string>
+
+    <!-- 메세지 리스트 메뉴 string -->
+    <string name="message_list_menu_edit_chattingroom">대화 편집</string>
+    <string name="message_list_menu_allign_chattingroom">대화방 정렬</string>
+</resources>
