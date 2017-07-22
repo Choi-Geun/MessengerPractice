@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/MessageTab_add_message"
+        android:icon="@drawable/add_message_icon"
+        android:orderInCategory="100"
+        android:title="addMessage"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/messageTab_search_friends"
+        android:icon="@drawable/search_btn"
+        android:orderInCategory="200"
+        android:title="searchMessage"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/messageTab_option"
+        android:icon="@drawable/dots_menu_icon"
+        android:orderInCategory="300"
+        android:title="option"
+        app:showAsAction="always"
+        />
+</menu>

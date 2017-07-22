@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Messenger_Main_View" />
-        <activity android:name=".Add_Friends_View" />
-        <activity android:name=".Search_Friends_View" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AddFriendsActivity" />
+        <activity android:name=".ActivitySearchFriends" />
     </application>
 
 </manifest>

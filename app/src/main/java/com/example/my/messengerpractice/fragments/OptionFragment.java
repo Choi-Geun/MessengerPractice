@@ -6,5 +6,5 @@ import android.support.v4.app.Fragment;
  * Created by my on 2017-07-18.
  */
 
-public class TimelineList extends Fragment {
+public class OptionFragment extends Fragment {
 }

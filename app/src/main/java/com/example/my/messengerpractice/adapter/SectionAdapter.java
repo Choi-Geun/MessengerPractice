@@ -7,24 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.my.messengerpractice.R;
-import com.example.my.messengerpractice.model.Friend;
 import com.example.my.messengerpractice.model.FriendSection;
 import com.example.my.messengerpractice.viewholder.SectionHeaderViewHolder;
 
 import java.util.List;
 
-/**
- * Created by my on 2017-07-19.
- */
 
 public class SectionAdapter extends RecyclerView.Adapter<SectionHeaderViewHolder> {
+    private FriendSection friendSection;
+    List<FriendSection> friendSectionsData;
 
-    private List<FriendSection> mSections;
-    private List<Friend> mFriends;
-
-    public SectionAdapter(List<Friend> mFriends,List<FriendSection> mSections){
-        this.mSections = mSections;
-        this.mFriends = mFriends;
+    public SectionAdapter(FriendSection sectionData) {
+        this.friendSection = sectionData;
     }
 
     @Override
@@ -32,21 +26,19 @@ public class SectionAdapter extends RecyclerView.Adapter<SectionHeaderViewHolder
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View SectionView = inflater.inflate(R.layout.section_header, parent,false);
-        SectionHeaderViewHolder sectionHeaderViewHolder = new SectionHeaderViewHolder(SectionView);
-
-        return sectionHeaderViewHolder;
+        View SectionView = inflater.inflate(R.layout.section_header_recyclerview, parent,false);
+        return new SectionHeaderViewHolder(SectionView);
     }
 
     @Override
     public void onBindViewHolder(SectionHeaderViewHolder holder, int position) {
-        FriendSection friendSection = mSections.get(position);
-        friendSection.setFriendList(mFriends);
-        holder.onBind(friendSection);
-        holder.sectionHeader.setText(friendSection.getHeader());
+
+        holder.onBind(friendSection.getSectionData().get(position));
+        holder.sectionHeader.setText(friendSection.getSectionData().get(position).getHeader());
     }
+
     @Override
     public int getItemCount() {
-        return mSections.size();
+            return friendSection.getSectionData().size();
     }
 }

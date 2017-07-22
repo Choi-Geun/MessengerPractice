@@ -12,29 +12,41 @@ import com.example.my.messengerpractice.model.FriendSection;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by my on 2017-07-18.
- */
+
 
 public class SectionHeaderViewHolder extends RecyclerView.ViewHolder{
     public TextView sectionHeader;
-    public List<Friend> friendList;
-    private RecyclerView sectinoRecyclerView;
+    private List<Friend> friendList;
+    private List<Friend> profileList;
+    private RecyclerView sectionRecyclerView;
 
     public SectionHeaderViewHolder(View itemView) {
         super(itemView);
         friendList = new ArrayList<>();
-        sectionHeader = itemView.findViewById(R.id.header_id);
-        sectinoRecyclerView = itemView.findViewById(R.id.section_recycler_view);
+        sectionHeader = itemView.findViewById(R.id.header);
+        sectionRecyclerView = itemView.findViewById(R.id.section_recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(itemView.getContext());
-        sectinoRecyclerView.setLayoutManager(linearLayoutManager);
+        sectionRecyclerView.setLayoutManager(linearLayoutManager);
     }
 
-    public void onBind(FriendSection section){
-        friendList = section.friendList;
-        FriendAdapter friendAdapter = new FriendAdapter(friendList,itemView.getContext());
-        sectinoRecyclerView.setAdapter(friendAdapter);
-        sectinoRecyclerView.setHasFixedSize(true);
+    public void onBind(FriendSection sections){
+        sections.setFriendList(new Friend().getFriendsData());
+        sections.setProfileList(new Friend().getProfileData());
+        friendList = sections.getFriendList();
+        profileList = sections.getProfileList();
+        FriendAdapter friendAdapter;
+
+        if(sections.getHeader().equals("프로필")){
+            friendAdapter = new FriendAdapter(profileList);
+            sectionRecyclerView.setAdapter(friendAdapter);
+            sectionRecyclerView.setHasFixedSize(true);
+            sectionHeader.setText(sections.getHeader());
+        }else{
+            friendAdapter = new FriendAdapter(friendList);
+            sectionRecyclerView.setAdapter(friendAdapter);
+            sectionRecyclerView.setHasFixedSize(true);
+            sectionHeader.setText(sections.getHeader());
+        }
 
     }
 }

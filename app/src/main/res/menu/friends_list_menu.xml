@@ -1,12 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/edit_friends"
-        android:title="친구 편집"
-        />
+        android:id="@+id/friendsTab_add_friends"
+        android:icon="@drawable/add_friends"
+        android:orderInCategory="100"
+        android:title="addFriends"
+        app:showAsAction="always" />
 
     <item
-        android:id="@+id/setting"
-       android:title="설정"
-        />
+        android:id="@+id/friendsTab_search_friends"
+        android:icon="@drawable/search_btn"
+        android:orderInCategory="200"
+        android:title="searchFriend"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/friendsTab_option"
+        android:icon="@drawable/dots_menu_icon"
+        android:orderInCategory="300"
+        android:title="option"
+        app:showAsAction="always"
+         />
+    <!--<item-->
+        <!--android:id="@+id/edit_friends"-->
+        <!--android:title="친구 편집"-->
+        <!--/>-->
+
+    <!--<item-->
+    <!--android:id="@+id/setting"-->
+    <!--android:title="설정"-->
+    <!--/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/logout"-->
+        <!--android:title="로그아웃"-->
+        <!--/>-->
 </menu>
